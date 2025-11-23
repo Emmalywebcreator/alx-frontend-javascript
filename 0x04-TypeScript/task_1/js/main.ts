@@ -63,6 +63,11 @@ function printTeacher({ firstName, lastName }: printTeacherFunction): string {
  * Interface describing the shape of data passed to the constructor.
  */
 
+interface IStudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
 interface IsStudent {
     firstName: string;
     lastName: string;
