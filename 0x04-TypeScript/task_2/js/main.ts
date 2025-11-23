@@ -70,8 +70,9 @@ function teachClass(todayClass: Subjects): string {
         return "Teaching Math";
     } else if (todayClass === "History") {
         return "Teaching History";
-    } else if (todayClass === "English") {
-        return "Teaching English";
-    }
+    } 
     return "No class today";
 }
+
+teachClass("Math");
+teachClass("History");  
