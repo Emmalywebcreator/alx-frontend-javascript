@@ -47,3 +47,18 @@ function createEmployee(salary: number | string): Director | Teacher {
 
 console.log(createEmployee(400)); // Teacher
 console.log(createEmployee(1000)); // Director
+
+function IsDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+function executeWork(employee: Director | Teacher): string {
+    if (IsDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
+
+console.log(executeWork(createEmployee(200))); // Teacher tasks
+console.log(executeWork(createEmployee(1000))); // Director tasks
