@@ -30,4 +30,19 @@ const director1: Director = {
     numberOfReports: 5
 }
 
-console.log(director1);
+// console.log(director1);
+
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+// const printTeacher: PrintTeacherFunction = function (firstName: string, lastName: string): string {
+//     return `${firstName} ${lastName}`;
+// }
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName} ${lastName}`;
+};
+
+
+console.log(printTeacher("Emmanuel", "Ohwoka"))
