@@ -32,17 +32,27 @@ const director1: Director = {
 
 // console.log(director1);
 
+// interface printTeacherFunction {
+//     (firstName: string, lastName: string): string;
+// }
 interface printTeacherFunction {
-    (firstName: string, lastName: string): string;
+    firstName: string,
+    lastName: string
 }
 
-const printTeacher: printTeacherFunction = function (firstName: string, lastName: string): string {
-    return `${firstName} ${lastName}`;
-}
+// const printTeacher: printTeacherFunction = function (firstName: string, lastName: string): string {
+//     return `${firstName} ${lastName}`;
+// }
+// const printTeacher: printTeacherFunction = ( {'firstName, lastName} ): string => {
+//     return `${firstName} ${lastName}`;
+// }
 
+function printTeacher({ firstName, lastName }: printTeacherFunction): string {
+    return `${firstName}. ${lastName}`;
+}
 // const printTeacher: printTeacherFunction = (firstName, lastName) => {
 //   return `${firstName} ${lastName}`;
 // };
 
 
-console.log(printTeacher("Emmanuel", "Ohwoka"))
+console.log(printTeacher({firstName: "John", lastName: "Doe"}));
