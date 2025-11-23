@@ -57,7 +57,22 @@ function printTeacher({ firstName, lastName }: printTeacherFunction): string {
 
 // console.log(printTeacher({firstName: "John", lastName: "Doe"}));
 
-class StudentClass {
+// --- Interfaces Definitions ---
+
+/**
+ * Interface describing the shape of data passed to the constructor.
+ */
+
+interface IsStudent {
+    firstName: string;
+    lastName: string;
+    workOnHomework(): void;
+    displayName(): string;
+}
+
+// --- Class Implementation ---
+
+class StudentClass implements IsStudent {
     firstName: string;
     lastName: string;
 
@@ -74,3 +89,12 @@ class StudentClass {
         return this.firstName;
     }
 }
+
+const student1 = new StudentClass("Emmanuel", "Aigbe");
+const student2 = new StudentClass("Ajanaku", "Emike");
+
+console.log(student1.displayName());
+student1.workOnHomework();
+
+console.log(student2.displayName());
+student2.workOnHomework();
