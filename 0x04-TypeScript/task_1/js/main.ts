@@ -55,4 +55,22 @@ function printTeacher({ firstName, lastName }: printTeacherFunction): string {
 // };
 
 
-console.log(printTeacher({firstName: "John", lastName: "Doe"}));
+// console.log(printTeacher({firstName: "John", lastName: "Doe"}));
+
+class StudentClass {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    workOnHomework(){
+        console.log("Currently working");
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
