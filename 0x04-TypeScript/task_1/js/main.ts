@@ -75,13 +75,11 @@ interface IsStudent {
     displayName(): string;
 }
 
-// --- Class Implementation ---
-
-class StudentClass implements IsStudent {
+class StudentClass {
     firstName: string;
     lastName: string;
 
-    constructor({firstName, lastName}: IStudentConstructor) {
+    constructor({ firstName, lastName }: IStudentConstructor) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -95,8 +93,8 @@ class StudentClass implements IsStudent {
     }
 }
 
-const student1 = new StudentClass({firstName: "Emmanuel", lastName: "Aigbe"});
-const student2 = new StudentClass({firstName: "Ajanaku", lastName: "Emike"});
+const student1 = new StudentClass({ firstName: "Emmanuel", lastName: "Aigbe" });
+const student2 = new StudentClass({ firstName: "Ajanaku", lastName: "Emike" });
 
 console.log(student1.displayName());
 console.log(student1.workOnHomework());
