@@ -71,7 +71,7 @@ interface IStudentConstructor {
 interface IsStudent {
     firstName: string;
     lastName: string;
-    workOnHomework(): void;
+    workOnHomework(): string;
     displayName(): string;
 }
 
@@ -86,7 +86,7 @@ class StudentClass implements IsStudent {
         this.lastName = lastName;
     }
 
-    workOnHomework(){
+    workOnHomework(): string {
         return "Currently working";
     }
 
