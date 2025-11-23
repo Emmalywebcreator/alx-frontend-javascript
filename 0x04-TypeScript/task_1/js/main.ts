@@ -81,13 +81,13 @@ class StudentClass implements IsStudent {
     firstName: string;
     lastName: string;
 
-    constructor(firstName: string, lastName: string) {
+    constructor({firstName, lastName}: IStudentConstructor) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     workOnHomework(){
-        console.log("Currently working");
+        return "Currently working";
     }
 
     displayName(): string {
@@ -95,11 +95,11 @@ class StudentClass implements IsStudent {
     }
 }
 
-const student1 = new StudentClass("Emmanuel", "Aigbe");
-const student2 = new StudentClass("Ajanaku", "Emike");
+const student1 = new StudentClass({firstName: "Emmanuel", lastName: "Aigbe"});
+const student2 = new StudentClass({firstName: "Ajanaku", lastName: "Emike"});
 
 console.log(student1.displayName());
-student1.workOnHomework();
+console.log(student1.workOnHomework());
 
 console.log(student2.displayName());
-student2.workOnHomework();
+console.log(student2.workOnHomework());
