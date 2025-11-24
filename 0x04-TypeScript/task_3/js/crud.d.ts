@@ -1,9 +1,5 @@
-/// <reference path="./interface.ts" />
+import { RowID, RowElement } from "./interface";
 
-import { RowElement, RowID } from "./interface";
-
-declare module ".crud" {
-    declare function insertRow(row: RowElement): RowID;
-    declare function deleteRow(rowId: RowID): void;
-    declare function updateRow(rowId: RowID, row: RowElement): RowElement | null;
-}
+export declare function insertRow(row: RowElement): RowID;
+export declare function updateRow(rowId: RowID, row: RowElement): RowID;
+export declare function deleteRow(rowId: RowID): void;
